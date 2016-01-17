@@ -1,5 +1,5 @@
 {
-  "name": "Cloudsify",
+  "name": "Cloudpify",
   "version": "1.0.0",
   "description": "A realtime and rest framework",
   "main": "app.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://thoqbk@github.com/thoqbk/cloudsify.git"
+    "url": "https://thoqbk@github.com/thoqbk/cloudpify.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thoqbk/cloudsify/issues"
+    "url": "https://github.com/thoqbk/cloudpify/issues"
   },
-  "homepage": "https://github.com/thoqbk/cloudsify",
+  "homepage": "https://github.com/thoqbk/cloudpify",
   "dependencies": {
     "express": "^4.13.1",
     "jade": "^1.11.0",

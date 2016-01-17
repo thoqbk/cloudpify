@@ -10,7 +10,7 @@ module.exports = {
         mysql: {
             host: "localhost",
             port: 3306,
-            database: "cloudsify",
+            database: "cloudpify",
             username: "root",
             password: "root",
             connectTimeout: 10000,

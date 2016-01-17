@@ -34,7 +34,7 @@ $config.applicationMode = applicationMode;
 container.register("$config", $config);
 
 $logger.info("-----");
-$logger.info("Starting Cloudsify (c) 2015 Cloudsify.io");
+$logger.info("Starting Cloudpify (c) 2015 Cloudpify.io");
 $logger.info("Application mode: " + applicationMode);
 
 //Start order:
@@ -68,7 +68,7 @@ Q(container.invoke(require("./lib/base-start/services.js")))
             var $logger = container.resolve("$logger");
             var now = new Date();
             var nowInString = now.getDate() + "/" + now.getMonth() + "/" + now.getFullYear() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-            var appName = $config.applicationMode == "full" ? "Cloudsify" : ($config.applicationMode == "service" ? "Cloudchat-service" : "Cloudchat-app");
+            var appName = $config.applicationMode == "full" ? "Cloudpify" : ($config.applicationMode == "service" ? "Cloudchat-service" : "Cloudchat-app");
             $logger.info("Start " + appName + " successfully in " + (now.getTime() - startTime)
                     + "ms at port: " + ($config.applicationMode == "full" || $config.applicationMode == "app" ? $config.port : $config.servicePort)
                     + ". " + nowInString);

@@ -13,8 +13,8 @@ module.exports = UserService;
 
 var users = [{
         id: 1,
-        username: "cloudsify",
-        fullName: "Cloudsify",
+        username: "cloudpify",
+        fullName: "Cloudpify",
         onlineStatus: "offline",
         avatarPath: "/image/avatar.png"
     }, {
