@@ -1,0 +1,29 @@
+{
+  "name": "Cloudsify",
+  "version": "1.0.0",
+  "description": "A realtime and rest framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://thoqbk@github.com/thoqbk/cloudsify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thoqbk/cloudsify/issues"
+  },
+  "homepage": "https://github.com/thoqbk/cloudsify",
+  "dependencies": {
+    "express": "^4.13.1",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^5.4.1",
+    "log4js": "0.6.26",
+    "mysql": "^2.9.0",
+    "q": "^1.4.1",
+    "socket.io": "1.3.6",
+    "underscore": "^1.8.3"
+  }
+}
