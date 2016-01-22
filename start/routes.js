@@ -14,7 +14,21 @@
  * @returns {undefined}
  */
 module.exports = function (route) {
-    
-    route.iq("cloudchat:sample-controller:hello", "SampleController@hello");
-    
+    route.iq("cloudchat:sample-controller:hello2", "SampleController@hello");
+    route.group()
+            .before(function ($input, $response, $logger) {
+                var message = "Hello " + $input.get("username") + ", this is before";
+                if ($input.get("deviceId") == "iphone") {
+                    message += " .I like iphone!";
+                } else {
+                    message += " .I hate " + $input.get("deviceId");
+                    $response.end(message);
+                }
+                $logger.debug(message);
+            })
+            .after(function ($input, $logger) {
+                $logger.debug("Hello " + $input.get("username") + ", this is after");
+            })
+            .iq("cloudchat:sample-controller:hello", "SampleController@hello");
+
 };
