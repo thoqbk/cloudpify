@@ -36,7 +36,7 @@ function AuthenticationService(userService, $config, $logger) {
 
                             jwt.verify(token, $config.jwt.secretKey, jwtOptions,
                                     function (error, decoded) {
-                                        if (error || decoded != userId) {
+                                        if (error || decoded.data != userId) {
                                             retVal.resolve(false);
                                             //debug
                                             if (error != null) {
@@ -64,7 +64,7 @@ function AuthenticationService(userService, $config, $logger) {
         isValidUserId(userId)
                 .then(function (ok) {
                     if (ok) {
-                        var token = jwt.sign(userId, $config.jwt.secretKey, jwtOptions);
+                        var token = jwt.sign({data: userId}, $config.jwt.secretKey, jwtOptions);
                         retVal.resolve(token);
                     } else {
                         retVal.reject(new Error("Invalid user: " + userId));
@@ -88,7 +88,7 @@ function AuthenticationService(userService, $config, $logger) {
         if (cachedUserIds[userId] != null) {
             retVal.resolve(true);
         } else {
-            userService.getById(userId)
+            userService.get(userId)
                     .then(function (user) {
                         if (user == null) {
                             retVal.resolve(false);

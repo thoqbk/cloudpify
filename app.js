@@ -14,29 +14,6 @@ var startTime = (new Date()).getTime();
 var Q = require("q");
 var container = new (require("./lib/container.js"))();//service container
 
-var log4js = require("log4js");
-log4js.configure("config/log4js.json");
-var $logger = log4js.getLogger("app");
-container.register("$logger", $logger);
-
-//get application mode
-var $config = require("./config/app.js");
-var applicationMode = "full";//app+service
-process.argv.forEach(function (val) {
-    if (val == "mode=service") {
-        applicationMode = "service";
-    }
-    if (val == "mode=app") {
-        applicationMode = "app";
-    }
-});
-$config.applicationMode = applicationMode;
-container.register("$config", $config);
-
-$logger.info("-----");
-$logger.info("Starting Cloudpify (c) 2015 Cloudpify.io");
-$logger.info("Application mode: " + applicationMode);
-
 //Start order:
 //1. base-services
 //2. services
@@ -46,6 +23,12 @@ $logger.info("Application mode: " + applicationMode);
 
 Q(container.invoke(require("./lib/base-start/services.js")))
         .then(function () {
+            $logger = container.resolve("$logger");   
+            $config = container.resolve("$config");            
+            
+            $logger.info("-----");
+            $logger.info("Starting Cloudpify (c) 2015 Cloudpify.io");
+            $logger.info("Application mode: " + $config.applicationMode);
             return Q(container.invoke(require("./start/services.js")));
         })
         .then(function () {
