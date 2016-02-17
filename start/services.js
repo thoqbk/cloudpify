@@ -7,10 +7,10 @@
  * 
  */
 
-var UserService = require("../service/user-service.js");
+var UserService = require("../service/sample-user-service.js");
 
-module.exports = function ($registerByClassFx) {
-    
-    $registerByClassFx("userService", UserService);
-
+module.exports = function ($registerByClassFx, $config) {
+    if ($config.applicationMode == "full" || $config.applicationMode == "service") {
+        $registerByClassFx("userService", UserService);
+    }
 };
