@@ -14,7 +14,7 @@
  * @returns {undefined}
  */
 module.exports = function (route) {
-    route.iq("cloudchat:sample-controller:hello2", "SampleController@hello");
+    route.action("cloudchat:sample-controller:hello2", "SampleController@hello");
     route.group()
             .before(function ($input, $response, $logger) {
                 var message = "Hello " + $input.get("username") + ", this is before";
@@ -29,6 +29,6 @@ module.exports = function (route) {
             .after(function ($input, $logger) {
                 $logger.debug("Hello " + $input.get("username") + ", this is after");
             })
-            .iq("cloudchat:sample-controller:hello", "SampleController@hello");
+            .action("cloudchat:sample-controller:hello", "SampleController@hello");
 
 };
