@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/thoqbk/cloudpify",
   "dependencies": {
+    "bson": "^0.4.22",
     "chai": "^3.5.0",
     "express": "^4.13.1",
     "jade": "^1.11.0",
