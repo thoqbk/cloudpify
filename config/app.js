@@ -6,16 +6,17 @@
  */
 
 module.exports = {
+    name: "Cloudpify",
     https: {
         enable: false
-        /**
-         * Add property key and cert before enable https
-         */
+                /**
+                 * Add property key and cert before enable https
+                 */
     },
     //Its value will be set when run cloudchat
     //Depend on input argument, applicationMode could be full, app or service
     applicationMode: null,
-    host:"0.0.0.0",
+    host: "0.0.0.0",
     port: 5102,
     //When start cloudchat with option "mode=service", cloudchat will use service port
     //to serve all its services (ex: message-service, user-service)
