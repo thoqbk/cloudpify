@@ -7,6 +7,7 @@
 
 module.exports = {
     name: "Cloudpify",
+    debug: false,
     https: {
         enable: false
                 /**
@@ -46,5 +47,6 @@ module.exports = {
             algorithm: "HS256",
             expiresIn: "10s"
         }
-    }
+    },
+    log: require("./log.js")
 };
