@@ -22,6 +22,6 @@ process.argv.forEach(function (val) {
 });
 
 handler.start(applicationMode)
-        .fail(function () {
+        .catch(function () {
             process.exit(1);
         });
