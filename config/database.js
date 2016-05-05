@@ -3,21 +3,28 @@
  */
 
 module.exports = {
-    default: "inmemory", //inmemory: use default user-service and message-service
+    default: "mysql",
     connections: {
-        inmemory: {
-        },
         mysql: {
-            host: "localhost",
-            port: 3306,
-            database: "cloudpify",
-            username: "root",
-            password: "root",
-            connectTimeout: 10000,
-            acquireTimeout: 10000,
-            //pool configuration:
-            queueLimit: 10,
-            connectionLimit: 10
+            client: "mysql",
+            connection: {
+                host: "127.0.0.1",
+                user: "your_database_user",
+                password: "your_database_password",
+                database: "your_database"
+            }
+        },
+        pg: {
+            client: 'pg',
+            connection: process.env.PG_CONNECTION_STRING,
+            searchPath: 'knex,public'
+        },
+        sqlite: {
+            client: 'sqlite3',
+            connection: {
+                filename: "./mydb.sqlite"
+            }
         }
+
     }
 };
