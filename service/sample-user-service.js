@@ -4,11 +4,14 @@
  * Tho Q Luong <thoqbk@gmail.com>
  *
  * Aug 06, 2015 21:43:22 PM
- *
+ * @Service(name="userService")
  */
 
 var Promise = require("bluebird");
 
+/**
+ * @Service(name="userService")
+ */
 module.exports = UserService;
 
 var users = [{

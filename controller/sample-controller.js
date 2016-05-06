@@ -1,4 +1,6 @@
 /**
+ * @Controller(name="SampleController")
+ * 
  * Sample controller
  * @param {type} userService description
  */
