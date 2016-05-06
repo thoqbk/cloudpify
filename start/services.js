@@ -9,8 +9,8 @@
 
 var UserService = require("../service/sample-user-service.js");
 
-module.exports = function ($registerByClassFx, $config) {
+module.exports = function ($registerByClass, $config) {
     if ($config.applicationMode == "full" || $config.applicationMode == "service") {
-        $registerByClassFx("userService", UserService);
+        $registerByClass("userService", UserService);
     }
 };

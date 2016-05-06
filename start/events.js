@@ -11,16 +11,16 @@
  * 
  * @param {type} $event
  * @param {type} $logger
- * @param {type} $resolveFx
+ * @param {type} $resolve
  * @param {type} userService
  * @param {type} $config
  * @returns {undefined}
  */
-module.exports = function ($event, $logger, $resolveFx, userService, $config) {
+module.exports = function ($event, $logger, $resolve, userService, $config) {
 
     //register realtime server events if any:
     if ($config.applicationMode == "full" || $config.applicationMode == "app") {
-        registerRealtimeServerEvents($event, $logger, $resolveFx, userService, $config);
+        registerRealtimeServerEvents($event, $logger, $resolve, userService, $config);
     }
 };
 
