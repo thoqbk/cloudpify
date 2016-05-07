@@ -20,6 +20,7 @@
     "bluebird": "^3.3.5",
     "bson": "^0.4.22",
     "chai": "^3.5.0",
+    "chokidar": "^1.4.3",
     "express": "^4.13.1",
     "jade": "^1.11.0",
     "jsonwebtoken": "^5.4.1",
