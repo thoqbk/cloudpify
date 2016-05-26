@@ -49,5 +49,5 @@ module.exports = {
         }
     },
     log: require("./log.js"),
-    scanDirectories: ["controller", "service"]
+    scanDirectories: ["controller", "service", "lib/service"]
 };
