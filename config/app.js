@@ -8,6 +8,7 @@
 module.exports = {
     name: "Cloudpify",
     debug: false,
+    watch: false,
     https: {
         enable: false
                 /**
