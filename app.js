@@ -22,6 +22,7 @@ process.argv.forEach(function (val) {
 });
 
 handler.start(applicationMode)
-        .catch(function () {
+        .catch(function (error) {
+            console.log("Start server fail: ", error);
             process.exit(1);
         });
