@@ -8,6 +8,7 @@
 module.exports = {
     name: "Cloudpify",
     debug: false,
+    version: "dec22.2016",
     watch: false, //watch $config.scanDirectories and auto reload services. Just available when debug = true and watch = true
     https: {
         enable: false
